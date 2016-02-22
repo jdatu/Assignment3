@@ -10,12 +10,14 @@ public class Calculator
 {
 
 	private int total;
+	private String history;
 	
 	/** Calculator() default constructor that initializes with total = 0
 	 */
 	public Calculator () 
 	{
 		total = 0;  // not needed - included for clarity
+		history = "0";	//history initialized to "0"
 	}
 	
 	
@@ -32,6 +34,7 @@ public class Calculator
 	public void add (int value) 
 	{
 		total = total + value; 
+		history = history + " + " + value; //adds onto history similarly done in the other mathematical functions
 	}
 	
 	/** The subtract method should subtract the parameter from the total variable
@@ -40,6 +43,7 @@ public class Calculator
 	public void subtract (int value) 
 	{
 		total = total - value;
+		history = history + " - " + value;
 	}
 	
 	
@@ -49,6 +53,7 @@ public class Calculator
 	public void multiply (int value) 
 	{
 		total = total * value;
+		history = history + " * " + value;
 	}
 	
 	
@@ -66,12 +71,14 @@ public class Calculator
 		{
 			total = total / value;
 		}
+		
+		history = history + " / " + value;
 	}
 	
 	/** getHistory method will return a history of all actions as a String.
 	 */
 	public String getHistory () 
 	{
-		return "";
+		return history;
 	}
 }

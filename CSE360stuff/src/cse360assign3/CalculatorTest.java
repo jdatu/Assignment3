@@ -78,7 +78,21 @@ public class CalculatorTest
 	public void testGetHistory() 
 	{
 		Calculator test = new Calculator();
-		assertEquals("",test.getHistory());	//should currently return empty string
+		assertEquals("0",test.getHistory());	//should return "0" right after calculator is initialized
+		
+		test.add(10);
+		assertEquals("0 + 10",test.getHistory());
+		
+		test.divide(2);
+		assertEquals("0 + 10 / 2",test.getHistory());
+		
+		test.multiply(3);
+		assertEquals("0 + 10 / 2 * 3",test.getHistory());
+		
+		test.subtract(5);
+		assertEquals("0 + 10 / 2 * 3 - 5",test.getHistory());
+		
+		
 		
 	}
 
